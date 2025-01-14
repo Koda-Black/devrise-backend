@@ -15,7 +15,6 @@ import {
 
 import { CreateNinjaDto } from './dto/create-ninja.dto';
 import { UpdateNinjaDto } from './dto/update-ninja.dto';
-import { UpdateUserDto } from 'src/users/dto/update-user.dto';
 import { NinjasService } from './ninjas.service';
 
 @Controller('ninjas')
@@ -42,7 +41,7 @@ export class NinjasController {
   }
 
   @Put(':id')
-  updateNinja(@Param('id') id: string, @Body() updateNinjaDto: UpdateUserDto) {
+  updateNinja(@Param('id') id: string, @Body() updateNinjaDto: UpdateNinjaDto) {
     return this.ninjasService.updateNinja(+id, updateNinjaDto);
   }
 
